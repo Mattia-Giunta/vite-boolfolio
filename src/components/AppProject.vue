@@ -45,7 +45,7 @@ export default {
                     <span
                         class="me-3 btn btn-primary"
                         v-for="(element, index) in technology"
-                        :key="index"
+                        :key="element.id"
                     >
                     {{ element.name }}
                     </span>
