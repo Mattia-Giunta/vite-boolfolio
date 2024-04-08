@@ -22,7 +22,7 @@ export default {
                     if (res.data.success) {
                         this.project = res.data.projects    
                     } else {
-
+                        this.$router.push({ name: 'not-found'})
                     }
                 })
         }
