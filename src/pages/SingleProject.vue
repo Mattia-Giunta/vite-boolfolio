@@ -48,7 +48,7 @@ export default {
                 {{ project?.content }}
             </p>
             <p>
-                Type: {{ project.Type?.name }}
+                Type: {{ project.type?.name }}
             </p>
             <p>
                 Technology:
