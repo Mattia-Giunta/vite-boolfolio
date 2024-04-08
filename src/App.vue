@@ -1,10 +1,12 @@
 <script>
 
-import MainApp from './components/MainApp.vue';
+import AppHeader from './components/AppHeader.vue';
+import ProjectList from './pages/ProjectList.vue';
 
 export default {
     components: {
-      MainApp
+      AppHeader,
+      ProjectList,
     },
 
 }
@@ -14,10 +16,14 @@ export default {
 
 <template>
 
+  <AppHeader/>
 
-  <h1>Ciao Mondo da App.vue</h1>
+
+  <!-- <h1>Ciao Mondo da App.vue</h1> -->
     
-  <MainApp/>
+  <!-- <MainApp/> -->
+
+  <router-view></router-view>
     
  
 </template>

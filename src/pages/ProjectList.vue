@@ -1,10 +1,9 @@
 <script>
 
 
+
 export default {
-    components: {
-      
-    },
+    name: 'ProjectList'
 
 }
 
@@ -13,8 +12,7 @@ export default {
 
 <template>
 
- 
-    
+ <h1>lista dei proggetti</h1>
  
 </template>
 
