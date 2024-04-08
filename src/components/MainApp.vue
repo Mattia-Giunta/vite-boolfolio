@@ -39,47 +39,52 @@ export default {
 <template>
 
     <main>
+        
+        <div class="container ">
+            
+            <h3>Main dove stampare i Project</h3>
 
-        <h3>Main dove stampare i Project</h3>
+            <div>
+                <p v-for="(element, index) in arrayProjects" :key="element.id">
 
-        <div>
-            <p v-for="(element, index) in arrayProjects" :key="element.id">
+                    <a href="#">
+                        {{ element.title }}
+                    </a>
 
-                <a href="#">
-                    {{ element.title }}
-                </a>
+                    <!-- <span class="ms-3">{{ element.type.name }}</span> -->
 
-                <!-- <span class="ms-3">{{ element.type.name }}</span> -->
+                    <span class="ms-3 bg-success " v-for="(elements, index) in element.technologies" :key="index">
 
-                <span class="ms-3 bg-success " v-for="(elements, index) in element.technologies" :key="index">
+                        {{ elements.name }}
 
-                    {{ elements.name }}
+                    </span>
 
-                </span>
+                </p>
 
-            </p>
+                <nav aria-label="Page navigation example">
 
-            <nav aria-label="Page navigation example">
+                    <ul class="pagination">
 
-                <ul class="pagination">
+                        <li class="page-item" :class="{ 'disabled': currentPage === 1 }">
+                            <button class="page-link" @click="getProject(currentPage - 1)">Previous</button>
+                        </li>
 
-                    <li class="page-item" :class="{ 'disabled': currentPage === 1 }">
-                        <button class="page-link" @click="getProject(currentPage - 1)">Previous</button>
-                    </li>
+                        <li class="page-item" v-for=" (element, index) in lastPage " :key="index">
+                            <button class="page-link" @click="getProject(element)">{{ element }}</button>
+                        </li>
 
-                    <li class="page-item" v-for=" (element, index) in lastPage " :key="index">
-                        <button class="page-link" @click="getProject(element)">{{ element }}</button>
-                    </li>
+                        <li class="page-item" :class="{ 'disabled': currentPage === lastPage }">
+                            <button class="page-link" @click="getProject(currentPage + 1)">Next</button>
+                        </li>
 
-                    <li class="page-item" :class="{ 'disabled': currentPage === lastPage }">
-                        <button class="page-link" @click="getProject(currentPage + 1)">Next</button>
-                    </li>
+                    </ul>
 
-                </ul>
+                </nav>
 
-            </nav>
+            </div>
 
         </div>
+
 
     </main>
 
