@@ -21,7 +21,7 @@ export default {
     methods: {
         getProject(projectApiPage) {
 
-            axios.get(`${store.apiBaseUrl}/api/test`,
+            axios.get(`${store.apiBaseUrl}/api/projects`,
                 {
                     params: {
                         page: projectApiPage

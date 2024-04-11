@@ -14,7 +14,7 @@ export default {
     methods: {
         getProject(projectApiPage) {
 
-            axios.get('http://127.0.0.1:8000/api/test',
+            axios.get('http://127.0.0.1:8000/api/projects',
                 {
                     params: {
                         page: projectApiPage
